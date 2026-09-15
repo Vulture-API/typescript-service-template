@@ -8,20 +8,20 @@ import {
   type ZodTypeProvider,
 } from "fastify-type-provider-zod";
 
-import { tratarErro } from "@/errors/tratador-de-erros.js";
-import { rotasDeUsuarios } from "@/modules/exemplo-usuarios/routes/usuarios.route.js";
+import { handleError } from "@/errors/error-handler.js";
+import { userRoutes } from "@/modules/example-users/routes/users.route.js";
 
-export function construirAplicacao() {
-  const aplicacao = Fastify({
+export function buildApp() {
+  const app = Fastify({
     logger: false,
   }).withTypeProvider<ZodTypeProvider>();
 
-  aplicacao.setValidatorCompiler(validatorCompiler);
-  aplicacao.setSerializerCompiler(serializerCompiler);
-  aplicacao.setErrorHandler(tratarErro);
+  app.setValidatorCompiler(validatorCompiler);
+  app.setSerializerCompiler(serializerCompiler);
+  app.setErrorHandler(handleError);
 
-  aplicacao.register(cookie);
-  aplicacao.register(rotasDeUsuarios, { prefix: "/api/usuarios" });
+  app.register(cookie);
+  app.register(userRoutes, { prefix: "/api/users" });
 
-  return aplicacao;
+  return app;
 }

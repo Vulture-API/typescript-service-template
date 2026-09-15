@@ -1,40 +1,40 @@
-import { env } from "@/config/ambiente.js";
-import { bancoDeDados } from "@/config/banco-de-dados.js";
-import { construirAplicacao } from "@/app.js";
+import { env } from "@/config/environment.js";
+import { database } from "@/config/database.js";
+import { buildApp } from "@/app.js";
 
-const aplicacao = construirAplicacao();
-let encerrando = false;
+const app = buildApp();
+let isShuttingDown = false;
 
-async function encerrarAplicacao(sinal: NodeJS.Signals) {
-  if (encerrando) return;
+async function shutdownApp(signal: NodeJS.Signals) {
+  if (isShuttingDown) return;
 
-  encerrando = true;
-  console.log(`Recebido ${sinal}. Encerrando aplicação...`);
+  isShuttingDown = true;
+  console.log(`Received ${signal}. Shutting down application...`);
 
   try {
-    await aplicacao.close();
+    await app.close();
 
-    await bancoDeDados.end();
+    await database.end();
 
-    console.log("Aplicação encerrada.");
-  } catch (erro) {
-    console.error("Erro ao encerrar aplicação:", erro);
+    console.log("Application shut down.");
+  } catch (error) {
+    console.error("Error while shutting down application:", error);
     process.exitCode = 1;
   }
 }
 
 process.once("SIGINT", () => {
-  void encerrarAplicacao("SIGINT");
+  void shutdownApp("SIGINT");
 });
 
 process.once("SIGTERM", () => {
-  void encerrarAplicacao("SIGTERM");
+  void shutdownApp("SIGTERM");
 });
 
-await aplicacao.listen({
+await app.listen({
   port: env.PORT,
   host: "0.0.0.0",
 });
 
-console.log("Servidor rodando!");
+console.log("Server is running!");
 console.log(`http://localhost:${env.PORT}`);

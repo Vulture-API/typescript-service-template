@@ -1,5 +1,5 @@
 # ----------------------------
-# Build
+# Compilação
 # ----------------------------
 FROM node:24-alpine AS builder
 
@@ -16,7 +16,7 @@ RUN npm run build
 
 
 # ----------------------------
-# Production
+# Produção
 # ----------------------------
 FROM node:24-alpine AS production
 
