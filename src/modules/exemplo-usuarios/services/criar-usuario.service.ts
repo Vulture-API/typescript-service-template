@@ -1,9 +1,9 @@
 import { randomUUID } from "node:crypto";
 
-import { ErroDeNomeDeUsuarioReservado } from "@/modulos/exemplo-usuarios/erros/nome-de-usuario-reservado.erro.js";
-import type { CriarUsuario } from "@/modulos/exemplo-usuarios/esquemas/criar-usuario.esquema.js";
-import type { RepositorioDeUsuarios } from "@/modulos/exemplo-usuarios/repositorios/usuarios.repositorio.js";
-import type { Usuario } from "@/modulos/exemplo-usuarios/tipos/usuario.tipo.js";
+import { ErroDeNomeDeUsuarioReservado } from "@/modules/exemplo-usuarios/errors/nome-de-usuario-reservado.error.js";
+import type { CriarUsuario } from "@/modules/exemplo-usuarios/schemas/criar-usuario.schema.js";
+import type { RepositorioDeUsuarios } from "@/modules/exemplo-usuarios/repositories/usuarios.repository.js";
+import type { Usuario } from "@/modules/exemplo-usuarios/types/usuario.type.js";
 
 export class ServicoDeCriarUsuario {
   constructor(private readonly repositorioDeUsuarios: RepositorioDeUsuarios) {}

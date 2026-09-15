@@ -1,4 +1,4 @@
-import "@/configuracoes/zod.configuracao.js";
+import "@/config/zod.config.js";
 
 import cookie from "@fastify/cookie";
 import Fastify from "fastify";
@@ -8,8 +8,8 @@ import {
   type ZodTypeProvider,
 } from "fastify-type-provider-zod";
 
-import { tratarErro } from "@/erros/tratador-de-erros.js";
-import { rotasDeUsuarios } from "@/modulos/exemplo-usuarios/rotas/usuarios.rota.js";
+import { tratarErro } from "@/errors/tratador-de-erros.js";
+import { rotasDeUsuarios } from "@/modules/exemplo-usuarios/routes/usuarios.route.js";
 
 export function construirAplicacao() {
   const aplicacao = Fastify({

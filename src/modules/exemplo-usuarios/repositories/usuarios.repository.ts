@@ -1,4 +1,4 @@
-import type { Usuario } from "@/modulos/exemplo-usuarios/tipos/usuario.tipo.js";
+import type { Usuario } from "@/modules/exemplo-usuarios/types/usuario.type.js";
 
 // aqui cria as funções e as queries do banco que serão executadas
 export class RepositorioDeUsuarios {

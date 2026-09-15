@@ -1,4 +1,4 @@
-import { ErroDeAplicacao } from "@/erros/aplicacao.erro.js";
+import { ErroDeAplicacao } from "@/errors/aplicacao.error.js";
 
 export class ErroDeNomeDeUsuarioReservado extends ErroDeAplicacao {
   constructor() {

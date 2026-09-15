@@ -1,5 +1,5 @@
 import "dotenv/config";
-import "@/configuracoes/zod.configuracao.js";
+import "@/config/zod.config.js";
 import z from "zod";
 
 const esquemaDasVariaveisDeAmbiente = z.object({
@@ -20,4 +20,4 @@ if (!resultado.success) {
   throw new Error(`Variáveis de ambiente inválidas:\n${erros}`);
 }
 
-export const ambiente = resultado.data;
+export const env = resultado.data;

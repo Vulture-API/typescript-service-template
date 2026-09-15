@@ -1,5 +1,5 @@
-import { ambiente } from "@/configuracoes/ambiente.js";
-import { bancoDeDados } from "@/infraestrutura/banco-de-dados.js";
+import { env } from "@/config/ambiente.js";
+import { bancoDeDados } from "@/config/banco-de-dados.js";
 import { construirAplicacao } from "@/app.js";
 
 const aplicacao = construirAplicacao();
@@ -32,8 +32,8 @@ process.once("SIGTERM", () => {
 });
 
 await aplicacao.listen({
-  port: ambiente.PORT,
+  port: env.PORT,
 });
 
 console.log("Servidor rodando!");
-console.log(`http://localhost:${ambiente.PORT}`);
+console.log(`http://localhost:${env.PORT}`);

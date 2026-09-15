@@ -1,10 +1,10 @@
 import type { FastifyPluginAsyncZod } from "fastify-type-provider-zod";
 
-import { ControladorDeUsuario } from "@/modulos/exemplo-usuarios/controladores/usuario.controlador.js";
-import { esquemaDeCriarUsuario } from "@/modulos/exemplo-usuarios/esquemas/criar-usuario.esquema.js";
-import { RepositorioDeUsuarios } from "@/modulos/exemplo-usuarios/repositorios/usuarios.repositorio.js";
-import { ServicoDeCriarUsuario } from "@/modulos/exemplo-usuarios/servicos/criar-usuario.servico.js";
-import { ServicoDeSelecionarUsuarios } from "@/modulos/exemplo-usuarios/servicos/selecionar-usuarios.servico.js";
+import { ControladorDeUsuario } from "@/modules/exemplo-usuarios/controllers/usuario.controller.js";
+import { esquemaDeCriarUsuario } from "@/modules/exemplo-usuarios/schemas/criar-usuario.schema.js";
+import { RepositorioDeUsuarios } from "@/modules/exemplo-usuarios/repositories/usuarios.repository.js";
+import { ServicoDeCriarUsuario } from "@/modules/exemplo-usuarios/services/criar-usuario.service.js";
+import { ServicoDeSelecionarUsuarios } from "@/modules/exemplo-usuarios/services/selecionar-usuarios.service.js";
 
 export const rotasDeUsuarios: FastifyPluginAsyncZod = async (aplicacao) => {
   const repositorioDeUsuarios = new RepositorioDeUsuarios();

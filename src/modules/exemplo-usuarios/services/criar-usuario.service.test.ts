@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
 
-import { ErroDeNomeDeUsuarioReservado } from "@/modulos/exemplo-usuarios/erros/nome-de-usuario-reservado.erro.js";
-import { RepositorioDeUsuarios } from "@/modulos/exemplo-usuarios/repositorios/usuarios.repositorio.js";
-import { ServicoDeCriarUsuario } from "@/modulos/exemplo-usuarios/servicos/criar-usuario.servico.js";
+import { ErroDeNomeDeUsuarioReservado } from "@/modules/exemplo-usuarios/errors/nome-de-usuario-reservado.error.js";
+import { RepositorioDeUsuarios } from "@/modules/exemplo-usuarios/repositories/usuarios.repository.js";
+import { ServicoDeCriarUsuario } from "@/modules/exemplo-usuarios/services/criar-usuario.service.js";
 
 describe("ServicoDeCriarUsuario", () => {
   it("cria e persiste um usuário fictício", async () => {

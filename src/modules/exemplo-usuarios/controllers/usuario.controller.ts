@@ -1,8 +1,8 @@
 import type { FastifyReply, FastifyRequest } from "fastify";
 
-import type { CriarUsuario } from "@/modulos/exemplo-usuarios/esquemas/criar-usuario.esquema.js";
-import type { ServicoDeCriarUsuario } from "@/modulos/exemplo-usuarios/servicos/criar-usuario.servico.js";
-import type { ServicoDeSelecionarUsuarios } from "@/modulos/exemplo-usuarios/servicos/selecionar-usuarios.servico.js";
+import type { CriarUsuario } from "@/modules/exemplo-usuarios/schemas/criar-usuario.schema.js";
+import type { ServicoDeCriarUsuario } from "@/modules/exemplo-usuarios/services/criar-usuario.service.js";
+import type { ServicoDeSelecionarUsuarios } from "@/modules/exemplo-usuarios/services/selecionar-usuarios.service.js";
 
 export class ControladorDeUsuario {
   constructor(

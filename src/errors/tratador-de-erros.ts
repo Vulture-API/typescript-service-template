@@ -4,8 +4,8 @@ import {
   type FastifyRequest,
 } from "fastify";
 
-import { ambiente } from "@/configuracoes/ambiente.js";
-import { ErroDeAplicacao } from "@/erros/aplicacao.erro.js";
+import { env } from "@/config/ambiente.js";
+import { ErroDeAplicacao } from "@/errors/aplicacao.error.js";
 
 export function tratarErro(
   erro: FastifyError,
@@ -15,7 +15,7 @@ export function tratarErro(
   request.log.error(erro);
 
   const detalhesDeDesenvolvimento =
-    ambiente.NODE_ENV === "development" ? { dev_test: erro } : {};
+    env.NODE_ENV === "development" ? { dev_test: erro } : {};
 
   // Erros encontrados nas validações do Fastify com Zod nas rotas.
   if (erro.validation) {

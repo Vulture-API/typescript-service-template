@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
-import { RepositorioDeUsuarios } from "@/modulos/exemplo-usuarios/repositorios/usuarios.repositorio.js";
-import { ServicoDeSelecionarUsuarios } from "@/modulos/exemplo-usuarios/servicos/selecionar-usuarios.servico.js";
+import { RepositorioDeUsuarios } from "@/modules/exemplo-usuarios/repositories/usuarios.repository.js";
+import { ServicoDeSelecionarUsuarios } from "@/modules/exemplo-usuarios/services/selecionar-usuarios.service.js";
 
 describe("ServicoDeSelecionarUsuarios", () => {
   it("retorna uma lista vazia quando não existem usuários", async () => {
