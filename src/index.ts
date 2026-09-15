@@ -33,6 +33,7 @@ process.once("SIGTERM", () => {
 
 await aplicacao.listen({
   port: env.PORT,
+  host: "0.0.0.0",
 });
 
 console.log("Servidor rodando!");
